@@ -114,7 +114,9 @@ VelodyneDriver::VelodyneDriver(ros::NodeHandle node,
   // default number of packets for each scan is a single revolution
   // (fractions rounded up)
   config_.npackets = (int) ceil(packet_rate / frequency);
-  private_nh.getParam("npackets", config_.npackets);
+  int npackets;
+  private_nh.getParam("npackets", npackets);
+  if(npackets > 0) config_.npackets = npackets; 
   ROS_INFO_STREAM("publishing " << config_.npackets << " packets per scan");
 
   // if we are timestamping based on the first or last packet in the scan
