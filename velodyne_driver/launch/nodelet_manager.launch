@@ -17,6 +17,7 @@
   <arg name="pcap_time" default="false" />
   <arg name="cut_angle" default="-0.01" />
   <arg name="npackets" default="-1" />
+  <arg name="freq_rate" default="2" />  <!-- multiplies the default 10Hz freq by this value (if rpm are constant) -->
   <arg name="timestamp_first_packet" default="false" />
   <arg name="diagnostic_frequency_tolerance" default="0.1" />
 
@@ -39,6 +40,7 @@
     <param name="pcap_time" value="$(arg pcap_time)"/>
     <param name="cut_angle" value="$(arg cut_angle)"/>
     <param name="npackets" value="$(arg npackets)"/>
+    <param name="freq_rate" value="$(arg freq_rate)"/>
     <param name="timestamp_first_packet" value="$(arg timestamp_first_packet)"/>
     <param name="diagnostic_frequency_tolerance" value="$(arg diagnostic_frequency_tolerance)"/>
   </node>
